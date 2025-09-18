@@ -60,7 +60,7 @@ Trois modèles de classification ont été comparés : Régression Logistique, F
 
 ## Technologies utilisées
 
-- Python 3.x
+- Python 3.12.7
 - Pandas & NumPy pour la manipulation des données
 - Matplotlib & Seaborn pour la visualisation
 - Scikit-learn pour le prétraitement et la modélisation
