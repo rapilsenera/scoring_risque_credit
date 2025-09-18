@@ -66,7 +66,7 @@ with st.sidebar:
     )
     # Pensez à mettre le vrai lien vers votre dépôt GitHub ici
     st.markdown(
-        "[Voir le projet sur GitHub](https://github.com/VOTRE_NOM_UTILISATEUR/credit-scoring-project)"  
+        "[Voir le projet sur GitHub](https://github.com/rapilsenera/scoring_risque_credit)"  
     )
     st.markdown("---")
 
