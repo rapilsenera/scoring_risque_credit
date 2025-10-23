@@ -1,51 +1,178 @@
-/* ---- STYLE GLOBAL ---- */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* ==============================
+   STYLE GLOBAL
+   ============================== */
+html, body, [class*="css"] {
+    font-family: 'Poppins', sans-serif;
+    color: #2E2E2E;
+    background-color: #F8F9FA;
 }
 
-/* ---- BOUTON PRIMAIRE ---- */
-button[data-testid="baseButton-primary"] {
-    background-color: #1f77b4; 
-    border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-size: 16px;
-    font-weight: bold;
-    transition: all 0.2s ease-in-out;
-}
-
-button[data-testid="baseButton-primary"]:hover {
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
-    background-color: #1a649a;
-}
-
-/* ---- MÉTRIQUE DE SCORE ---- */
-div[data-testid="metric-container"] > div > p {
-    font-size: 2.5rem; 
+/* Titre principal */
+h1 {
+    color: #1E3D58;
+    text-align: center;
     font-weight: 700;
+    margin-top: 0.5em;
+    margin-bottom: 0.3em;
 }
 
-/* Style de la jauge de progression */
-/* Barre pour prêt accepté (vert) */
-div[data-testid="stProgress"] > div > div > div > div {
-    background-color: #2ca02c; 
-}
-
-/* ---- CONTENEURS ---- */
-div[data-testid="stVerticalBlockBorderWrapper"] {
-    background-color: #f8f9fa; 
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06); 
-}
-
-/* ---- Titres dans les conteneurs ---- */
-div[data-testid="stVerticalBlockBorderWrapper"] .st-emotion-cache-1r6slb0 {
-    font-size: 1.3rem; 
+/* Sous-titres */
+h2, h3 {
+    color: #2E5984;
     font-weight: 600;
-    color: #1f77b4;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e0e0e0;
-    margin-bottom: 15px;
+}
+
+/* ==============================
+   BARRE LATÉRALE
+   ============================== */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #1E3D58, #2E5984);
+    color: white !important;
+    border-right: 2px solid #2E5984;
+}
+
+section[data-testid="stSidebar"] h1, 
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3,
+section[data-testid="stSidebar"] p,
+section[data-testid="stSidebar"] a,
+section[data-testid="stSidebar"] span {
+    color: white !important;
+}
+
+section[data-testid="stSidebar"] a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #FFD166 !important;
+}
+
+section[data-testid="stSidebar"] a:hover {
+    color: #FFB703 !important;
+    text-decoration: underline;
+}
+
+/* ==============================
+   BOUTONS
+   ============================== */
+div.stButton > button {
+    background: linear-gradient(90deg, #0077B6, #00B4D8);
+    color: white;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    padding: 0.75em 1.5em;
+    transition: all 0.3s ease;
+    font-size: 1.05em;
+}
+
+div.stButton > button:hover {
+    background: linear-gradient(90deg, #0096C7, #48CAE4);
+    transform: scale(1.03);
+}
+
+/* ==============================
+   CONTENEURS
+   ============================== */
+div[data-testid="stContainer"] {
+    background-color: white;
+    border-radius: 12px;
+    padding: 1.5em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    margin-bottom: 1.5em;
+}
+
+/* ==============================
+   INPUTS & SELECTBOXES
+   ============================== */
+div[data-baseweb="select"] > div {
+    border-radius: 8px !important;
+    border: 1.5px solid #CED4DA !important;
+    background-color: #F8F9FA !important;
+}
+
+div[data-baseweb="select"] > div > div {
+    border-radius: 8px !important;
+}
+
+div[data-baseweb="select"] svg {
+    background-color: transparent !important;
+}
+
+div[data-baseweb="select"]:focus-within > div {
+    border-color: #0077B6 !important;
+    box-shadow: 0 0 5px rgba(0, 119, 182, 0.3) !important;
+}
+
+/* ==============================
+   MÉTRIQUES ET RÉSULTATS
+   ============================== */
+[data-testid="stMetric"] {
+    background-color: #F1FAEE;
+    border-radius: 12px;
+    padding: 1em;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    color: #1D3557;
+}
+
+[data-testid="stMetricLabel"] {
+    font-weight: 600;
+    color: #1D3557 !important;
+}
+
+[data-testid="stMetricValue"] {
+    font-size: 1.5em !important;
+    color: #457B9D !important;
+}
+
+/* ==============================
+   BARRES DE PROGRESSION
+   ============================== */
+div[role="progressbar"] {
+    border-radius: 10px;
+    height: 20px !important;
+}
+
+div[role="progressbar"] > div {
+    border-radius: 10px;
+    background: linear-gradient(90deg, #06D6A0, #1B9AAA);
+}
+
+/* ==============================
+   EXPANDERS ET TABLES
+   ============================== */
+details[data-testid="stExpander"] {
+    border-radius: 10px;
+    background-color: #F8F9FA !important;
+    border: 1px solid #DEE2E6 !important;
+    margin-top: 1em;
+}
+
+details[data-testid="stExpander"] summary {
+    color: #1E3D58 !important;
+    font-weight: 600;
+}
+
+table {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* ==============================
+   ALERTES ET MESSAGES
+   ============================== */
+.stAlert {
+    border-radius: 10px !important;
+    padding: 1em !important;
+}
+
+/* ==============================
+   ANIMATIONS LÉGÈRES
+   ============================== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+div, section, header, footer {
+    animation: fadeIn 0.3s ease-in-out;
 }

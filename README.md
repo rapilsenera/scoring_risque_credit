@@ -10,7 +10,7 @@ Dans le secteur financier, évaluer avec précision le risque de défaut est pri
 
 - **/app**: Contient le code de l'application web (`app.py`) et le fichier de style (`style.css`).
 - **/data**: Contient le jeu de données `credit_risk_dataset.csv`.
-- **/models**: Stocke le préprocesseur (`processor.joblib`) et le modèle XGBoost entraîné (`xgb_model.joblib`).
+- **/models** : Stocke le pipeline complet (`scoring_credit_pipeline.joblib`). Ce fichier unique contient à la fois le préprocesseur et le modèle XGBoost entraîné.
 - **/notebooks**: Renferme le notebook Jupyter `analyse_scoring_credit.ipynb` qui détaille l'analyse exploratoire et la modélisation.
 - **train_model.py**: Script Python permettant de ré-entraîner le modèle et de sauvegarder les artefacts.
 - **requirements.txt**: Liste des dépendances Python nécessaires au projet.
@@ -56,13 +56,17 @@ Pour exécuter ce projet en local, suivez ces étapes :
 
 ## Modélisation
 
-Trois modèles de classification ont été comparés : Régression Logistique, Forêt Aléatoire et XGBoost. Le modèle XGBoost a été sélectionné pour ses performances supérieures, avec un **AUC ROC de 0.896** et une **accuracy de 89.2%** sur l'ensemble de test.
+Trois modèles de classification ont été comparés : Régression Logistique, Forêt Aléatoire et XGBoost. Le modèle XGBoost a été sélectionné pour ses performances supérieures, avec un **AUC ROC de 0.8967** et une **accuracy de 88%** sur l'ensemble de test.
 
 ## Technologies utilisées
 
-- Python 3.12.7
-- Pandas & NumPy pour la manipulation des données
-- Matplotlib & Seaborn pour la visualisation
-- Scikit-learn pour le prétraitement et la modélisation
-- XGBoost pour le modèle final
-- Imblearn pour le rééchantillonnage (SMOTE)
+- **Python** 3.12.7
+- **Pandas & NumPy** pour la manipulation des données
+- **Matplotlib, Seaborn & Dython** pour la visualisation et l'exploration
+- **Scikit-learn** pour le prétraitement et la modélisation
+- **XGBoost** pour le modèle final
+- **Imblearn** pour le rééchantillonnage (SMOTE)
+- **Hyperopt** pour l'optimisation des hyperparamètres
+- **SHAP** pour l'interprétabilité du modèle
+- **Streamlit** pour le dashboard interactif
+- **Joblib** pour la sauvegarde du pipeline modèle
